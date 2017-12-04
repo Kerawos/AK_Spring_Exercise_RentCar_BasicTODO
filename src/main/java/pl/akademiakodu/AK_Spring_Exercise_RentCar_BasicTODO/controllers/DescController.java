@@ -1,19 +1,19 @@
 package pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.controllers;
 /**
- * Import Section
+ * Imports Section
  */
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Control description
+ * Control description template
  */
 @Controller
 public class DescController {
 
     /**
-     * Method to get description image from description template to user
-     * @return description predefined template containing description of exercise
+     * Method responsible for loading requested description template
+     * @return desc template
      */
     @GetMapping("/desc")
     public String descGet(){

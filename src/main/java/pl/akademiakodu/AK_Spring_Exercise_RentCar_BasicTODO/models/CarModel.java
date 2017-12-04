@@ -1,10 +1,17 @@
-package pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models.bags;
+package pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models;
 
 
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models.CarAmortization;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models.services.CarAmortization;
 
+/**
+ * Class for holding car object.
+ */
 public class CarModel {
 
+    /**
+     * Services and variables declarations
+     */
+    private CarAmortization carAmortization;
     private String model;
     private int dailyCost;
     private int costPer100Km;
@@ -12,15 +19,22 @@ public class CarModel {
     private int fuelConsumption;
     private int carValue;
 
+    /**
+     * constructors
+     */
     public CarModel(String model, int passengerCapacity, int fuelConsumption, int carValue) {
+        carAmortization = new CarAmortization();
         this.model = model;
-        this.dailyCost = CarAmortization.dailyAmortization(carValue);
-        this.costPer100Km = CarAmortization.distanceAmortization(carValue, passengerCapacity, fuelConsumption);
+        this.dailyCost = carAmortization.dailyAmortization(carValue);
+        this.costPer100Km = carAmortization.distanceAmortization(carValue, passengerCapacity, fuelConsumption);
         this.passengerCapacity = passengerCapacity;
         this.fuelConsumption = fuelConsumption;
         this.carValue = carValue;
     }
 
+    /**
+     * Getters and setters section
+     */
     public String getModel() {
         return model;
     }

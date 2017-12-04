@@ -1,20 +1,24 @@
 package pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models;
 
+/**
+ * Imports section
+ */
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models.bags.CarModel;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models.bags.UserPreferencesModel;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_BasicTODO.models.services.OptimalCarFounder;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * Class responsible for testing car rent logic
+ */
 public class OptimalCarFounderTest {
 
     private static OptimalCarFounder optimalCarFounder;
-
 
     @BeforeClass public static void start(){
         optimalCarFounder = new OptimalCarFounder();
@@ -24,7 +28,10 @@ public class OptimalCarFounderTest {
         optimalCarFounder = null;
     }
 
-    @Test public void test1(){
+    /**
+     * Method testing rent logic
+     */
+    @Test public void testRentLogic(){
         assertNotNull(new OptimalCarFounder().optimalCarsToRent(new UserPreferencesModel(1000, 3, 100, 5)));
 
         List<CarModel> actualList = new OptimalCarFounder().optimalCarsToRent(new UserPreferencesModel(100, 3, 100, 3));
@@ -55,6 +62,11 @@ public class OptimalCarFounderTest {
 
     }
 
+    /**
+     * Method comparing two array length
+     * @param actualList
+     * @param expectedList
+     */
     public void testArray(List<CarModel> actualList, List<CarModel> expectedList){
         assertEquals(actualList.size(), expectedList.size());
         for (int i = 0; i < expectedList.size(); i++) {
