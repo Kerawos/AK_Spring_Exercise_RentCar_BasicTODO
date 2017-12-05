@@ -28,8 +28,7 @@ public class IndexController {
     /**
      * Declaration services and variables
      */
-    @Autowired
-    OptimalCarFounder optimalCarFounder;
+    @Autowired OptimalCarFounder optimalCarFounder;
     @Autowired ResultToUser resultToUser;
     List<CarModel> potentialRentCarList;
     List<ResultModel> resultModelList;

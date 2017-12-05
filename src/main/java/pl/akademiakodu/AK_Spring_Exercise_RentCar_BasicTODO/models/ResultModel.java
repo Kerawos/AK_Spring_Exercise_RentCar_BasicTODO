@@ -14,7 +14,7 @@ public class ResultModel {
     private int extraDistanceCostPer100Km;
 
     /**
-     * constructors
+     * Constructors
      */
     public ResultModel(CarModel carModel, int totalCost, int extraDayCost, int extraDistanceCostPer100Km) {
         this.carModel = carModel;
